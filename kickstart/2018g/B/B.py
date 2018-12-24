@@ -8,15 +8,15 @@ def build_tree(bst_list, boundaries, root, r, depth, offset):
         bst_list[root][0] += r[1] - r[0] + 1
         pivot = int((root - offset) / 2)
         boundary_idx = pivot + int(offset / 2)
-        if boundary_idx >= len(boundaries) or r[0] > boundaries[boundary_idx]:
-            bst_list[root][1].append((root + pivot + 1, r, depth - 1, offset + 2 ** depth))
-        elif r[1] <= boundaries[boundary_idx]:
+        if boundary_idx >= len(boundaries) or r[1] <= boundaries[boundary_idx]:
             bst_list[root][1].append((pivot + offset, r, depth - 1, offset))
+        elif r[0] > boundaries[boundary_idx]:
+            bst_list[root][1].append((root + pivot + 1, r, depth - 1, offset + 2 ** depth))
         else:
-            r1 = (boundaries[boundary_idx + 1], r[1])
-            r2 = (r[0], boundaries[boundary_idx])
-            bst_list[root][1].append((root + pivot + 1, r1, depth - 1, offset + 2 ** depth))
-            bst_list[root][1].append((pivot + offset, r2, depth - 1, offset))
+            r1 = (r[0], boundaries[boundary_idx])
+            r2 = (boundaries[boundary_idx + 1], r[1])
+            bst_list[root][1].append((pivot + offset, r1, depth - 1, offset))
+            bst_list[root][1].append((root + pivot + 1, r2, depth - 1, offset + 2 ** depth))
 
 
 def solution(n, q, l1, l2, l3):
@@ -79,7 +79,7 @@ def solution(n, q, l1, l2, l3):
     return result
 
 
-inputFile = open('B.in', 'r')
+inputFile = open('B-small-practice.in', 'r')
 outputFile = open('B.out', 'w')
 numOfTests = int(inputFile.readline())
 for test in range(numOfTests):
