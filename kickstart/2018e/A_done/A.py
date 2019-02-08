@@ -13,15 +13,9 @@ def solution(n, k, l):
     return consume
 
 
-inputFile = open('A-large-practice.in', 'r')
-outputFile = open('A.out', 'w')
-
-numOfTests = int(inputFile.readline())
+numOfTests = int(input())
 for i in range(numOfTests):
-    N, K = tuple(map(lambda x: int(x), inputFile.readline().split()))
-    data = map(lambda x: int(x), inputFile.readline().split())
+    N, K = tuple(map(lambda x: int(x), input().split()))
+    data = map(lambda x: int(x), input().split())
     answer = solution(N, K, data)
-    outputFile.write('Case #' + str(i+1) + ': ' + str(answer) + '\n')
-
-inputFile.close()
-outputFile.close()
+    print('Case #' + str(i+1) + ': ' + str(answer) + '\n')
