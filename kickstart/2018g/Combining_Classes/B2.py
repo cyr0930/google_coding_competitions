@@ -79,16 +79,11 @@ def solution(n, q, l1, l2, l3):
     return result
 
 
-inputFile = open('B-large-practice.in', 'r')
-outputFile = open('B.out', 'w')
-numOfTests = int(inputFile.readline())
+numOfTests = int(input())
 for test in range(numOfTests):
-    N, Q = tuple(map(lambda x: int(x), inputFile.readline().split()))
-    data1 = list(map(lambda x: int(x), inputFile.readline().split()))
-    data2 = list(map(lambda x: int(x), inputFile.readline().split()))
-    data3 = list(map(lambda x: int(x), inputFile.readline().split()))
+    N, Q = tuple(map(lambda x: int(x), input().split()))
+    data1 = list(map(lambda x: int(x), input().split()))
+    data2 = list(map(lambda x: int(x), input().split()))
+    data3 = list(map(lambda x: int(x), input().split()))
     answer = solution(N, Q, data1, data2, data3)
-    outputFile.write('Case #' + str(test+1) + ': ' + str(answer) + '\n')
-    print(test)
-inputFile.close()
-outputFile.close()
+    print('Case #' + str(test+1) + ': ' + str(answer) + '\n')
