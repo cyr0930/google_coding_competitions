@@ -24,7 +24,7 @@ for it in range(T):
     for i in range(P):
         forbidden.append(inputFile.readline()[:-1])
     answer = solution(N, P, forbidden)
-    outputFile.write('Case #' + str(it+1) + ': ' + str(answer) + '\n')
+    outputFile.write(f'Case #{it+1}: {answer}\n')
     outputFile.flush()
 inputFile.close()
 outputFile.close()

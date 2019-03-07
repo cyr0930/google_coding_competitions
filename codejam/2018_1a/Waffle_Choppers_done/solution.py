@@ -62,5 +62,5 @@ for it in range(T):
     pancake = []
     for i in range(R):
         pancake.append(input())
-    answer = solution(R, C, H, V, pancake)
-    print('Case #' + str(it+1) + ': ' + ('POSSIBLE' if answer else 'IMPOSSIBLE') + '\n')
+    answer = 'POSSIBLE' if solution(R, C, H, V, pancake) else 'IMPOSSIBLE'
+    print(f'Case #{it+1}: {answer}\n')

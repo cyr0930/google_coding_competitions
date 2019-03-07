@@ -86,4 +86,4 @@ for test in range(numOfTests):
     data2 = list(map(lambda x: int(x), input().split()))
     data3 = list(map(lambda x: int(x), input().split()))
     answer = solution(N, Q, data1, data2, data3)
-    print('Case #' + str(test+1) + ': ' + str(answer) + '\n')
+    print(f'Case #{test+1}: {answer}\n')

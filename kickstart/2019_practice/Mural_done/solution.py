@@ -12,13 +12,9 @@ def solution(n, line):
     return maxVal
 
 
-inputFile = open('B-small-attempt1.in', 'r')
-outputFile = open('B.out', 'w')
-T = int(inputFile.readline())
-for test in range(T):
-    N = int(inputFile.readline())
-    line = inputFile.readline().rstrip()
+T = int(input())
+for t in range(T):
+    N = int(input())
+    line = input().rstrip()
     answer = solution(N, line)
-    outputFile.write(f'Case #{test+1}: {answer}\n')
-inputFile.close()
-outputFile.close()
+    print(f'Case #{t+1}: {answer}')

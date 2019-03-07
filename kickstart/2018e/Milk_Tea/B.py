@@ -36,7 +36,7 @@ for i in range(numOfTests):
         bans.append(inputFile.readline())
 
     answer = solution(P, picks, bans)
-    outputFile.write('Case #' + str(i+1) + ': ' + str(answer) + '\n')
+    outputFile.write(f'Case #{i+1}: {answer}\n')
 
 inputFile.close()
 outputFile.close()

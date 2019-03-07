@@ -28,4 +28,4 @@ for t in range(T):
     for i in range(N):
         words.append(input())
     answer = solution(N, L, words)
-    print('Case #' + str(t+1) + ': ' + answer + '\n')
+    print(f'Case #{t+1}: {answer}\n')

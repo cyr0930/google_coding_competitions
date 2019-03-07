@@ -34,6 +34,6 @@ T = int(inFile.readline())
 for i in range(T):
     print(i)
     N, M = map(lambda x: int(x), inFile.readline().split())
-    outFile.write("Case #" + str(i+1) + ": " + str(solution(N, M)) + "\n")
+    outFile.write(f'Case #{i+1}: {solution(N, M)}\n')
 inFile.close()
 outFile.close()

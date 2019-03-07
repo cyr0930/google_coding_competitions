@@ -18,4 +18,4 @@ for i in range(numOfTests):
     N, K = tuple(map(lambda x: int(x), input().split()))
     data = map(lambda x: int(x), input().split())
     answer = solution(N, K, data)
-    print('Case #' + str(i+1) + ': ' + str(answer) + '\n')
+    print(f'Case #{i+1}: {answer}\n')
