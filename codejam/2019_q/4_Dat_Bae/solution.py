@@ -13,7 +13,7 @@ def main():
         N, B, F = int(N), int(B), int(F)
         div = 16
         room = None
-        for i in range(F):
+        while div > 0:
             case = make_case(div, N)
             print(''.join(case), flush=True)
             result = input()
@@ -23,11 +23,11 @@ def main():
                 cur = '0'
                 for c in result:
                     if c != cur:
-                        buf.append(div - count)
+                        buf.append(count)
                         count = 0
                         cur = '0' if cur == '1' else '1'
                     count += 1
-                buf.append((N % div) - count)
+                buf.append(count)
             else:
                 offset = 0
                 for count in room:
@@ -43,8 +43,9 @@ def main():
             div = div // 2
             room = buf
         ans = []
-        for i, val in enumerate(room):
-            if val == 1:
+        for i in range(min(N, len(room))):
+            val = room[i]
+            if val == 0:
                 ans.append(str(i))
         print(' '.join(ans), flush=True)
         verdict = input()
